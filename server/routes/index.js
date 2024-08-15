@@ -6,7 +6,7 @@ const productRoutes = require('../src/inventory/routes/productRoutes');
 
 module.exports = (app) => {
   app.get('/', (req, res) => {
-    res.send('Welcome to the CatalogCraft node API!')
+    res.json('Welcome to retailfusion where no one does the work and waits for further instructions!')
   })
   app.use('/status', statusRoutes);
   app.use('/auth', userRoutes);

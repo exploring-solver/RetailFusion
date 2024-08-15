@@ -19,7 +19,8 @@ const Header = () => {
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'Stores', path: '/stores' },
-    { label: 'AR/VR Experience', path: '/ar-vr' },
+    { label: 'Split payment', path: '/split-payment' },
+    // { label: 'AR/VR Experience', path: '/ar-vr' },
     { label: 'Inventory', path: '/inventory' },
     { label: 'Recommendations', path: '/recommendations' },
     ...(user
@@ -88,8 +89,8 @@ const Header = () => {
           ))}
           <Collapse in={dropdownOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem button component={Link} to="/ar-vr">
-                <ListItemText primary="AR/VR Experience" />
+              <ListItem button component={Link} to="/split-payment">
+                <ListItemText primary="Split Payment" />
               </ListItem>
               <ListItem button component={Link} to="/inventory">
                 <ListItemText primary="Inventory" />

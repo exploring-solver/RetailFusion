@@ -48,3 +48,13 @@ exports.profile = async (req, res) => {
     res.status(500).send({ error: error.message });
   }
 };
+
+exports.getUserProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id).populate('shoppingHistory.product');
+    if (!user) return res.status(404).json({ message: 'User not found' });
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

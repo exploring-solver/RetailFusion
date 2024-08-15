@@ -2,6 +2,8 @@ const config = require('./config');
 // const { connectDB } = require('./services/mongoose');
 const app = require('./app');
 const { connectDB } = require('./services/mongooseDb');
+const Product = require('./src/inventory/models/Product');
+const Store = require('./src/inventory/models/Store');
 const PORT = process.env.PORT || config.port;
 
 const start = async () => {
@@ -24,6 +26,8 @@ const start = async () => {
   const adminOptions = {
     resources: [
       { resource: User, options: { parent: { name: 'User Management' } } },
+      { resource: Store, options: { parent: { name: 'Store Management' } } },
+      { resource: Product, options: { parent: { name: 'Product Management' } } },
     ],
     rootPath: '/admin',
   };

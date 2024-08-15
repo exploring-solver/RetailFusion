@@ -18,11 +18,13 @@ const Header = () => {
 
   const navItems = [
     { label: 'Home', path: '/' },
-    { label: 'Stores', path: '/stores' },
-    { label: 'Split payment', path: '/split-payment' },
+    { label: 'Stores Near Me', path: '/stores' },
+    // { label: 'Split payment', path: '/split-payment' },
     // { label: 'AR/VR Experience', path: '/ar-vr' },
     { label: 'Inventory', path: '/inventory' },
-    { label: 'Recommendations', path: '/recommendations' },
+    // { label: 'Recommendations', path: '/recommendations' },
+    { label: 'My Cart', path: '/split-payment' },
+    { label: 'Profile', path: '/user' },
     ...(user
       ? [{ label: 'Logout', action: handleLogout }]
       : [

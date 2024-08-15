@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 const ARViewer = () => {
   return (
     <Box>
-      <Typography variant="h5">AR Product Viewer</Typography>
+      <Typography variant="h5"></Typography>
       {/* Implement AR viewer using a library like AR.js or React-Web-AR */}
     </Box>
   );

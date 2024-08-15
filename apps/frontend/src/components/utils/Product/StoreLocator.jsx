@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, List, ListItem } from '@mui/material';
 import axios from 'axios';
+import { findNearbyStores } from '../../../services/Api';
 
 const StoreLocator = () => {
   const [stores, setStores] = useState([]);
@@ -10,7 +11,7 @@ const StoreLocator = () => {
       // Use browser geolocation API to get user's location
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords;
-        const response = await axios.get(`http://localhost:3018/store/stores/nearby?latitude=${latitude}&longitude=${longitude}`);
+        const response = await findNearbyStores(latitude,longitude);
         setStores(response.data);
       });
     };

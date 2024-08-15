@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Typography, Grid } from '@mui/material';
 import ProductList from '../../utils/Product/ProductList';
 import ARViewer from '../../utils/Product/ARViewer';
+import Marketplace from './Marketplace';
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
           <ARViewer />
         </Grid>
       </Grid>
+      <Marketplace/>
     </Container>
   );
 };

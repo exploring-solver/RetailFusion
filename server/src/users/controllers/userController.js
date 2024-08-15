@@ -1,42 +1,35 @@
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const config = require('../../../config');
 
-// Register new user
 exports.register = async (req, res) => {
   try {
     const { email, password, name, number, role } = req.body;
     const user = await User.createUser(email, password, name, number, role);
-    res.status(201).send({ message: 'User registered successfully', user });
+    const token = user.generateAuthToken();
+    res.status(201).send({ message: 'User registered successfully', token, user: { _id: user._id, name: user.name, email: user.email } });
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
 };
 
-// Login user
 exports.login = async (req, res) => {
-  const { email, password } = req.body;
-
   try {
+    const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).send({ error: 'Invalid email or password' });
     }
-
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).send({ error: 'Invalid email or password' });
     }
-
     const token = user.generateAuthToken();
-    res.send({ message: 'Login successful', token, user });
+    res.send({ message: 'Login successful', token, user: { _id: user._id, name: user.name, email: user.email } });
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
 };
 
-// Get user profile
 exports.profile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id).select('-password');
@@ -47,6 +40,11 @@ exports.profile = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
+};
+
+exports.validateToken = async (req, res) => {
+  // If the middleware passes, the token is valid
+  res.status(200).send({ message: 'Token is valid', user: { _id: req.user._id, name: req.user.name, email: req.user.email } });
 };
 
 exports.getUserProfile = async (req, res) => {

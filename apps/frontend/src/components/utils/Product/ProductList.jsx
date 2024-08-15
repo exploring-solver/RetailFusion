@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Card, CardContent, Typography } from '@mui/material';
 import axios from 'axios';
+import { fetchProducts } from '../../../services/Api';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await axios.get('http://localhost:3018/product');
+    const getProducts = async () => {
+      const response = await fetchProducts();
       setProducts(response.data);
     };
-    fetchProducts();
+    getProducts();
   }, []);
 
   return (

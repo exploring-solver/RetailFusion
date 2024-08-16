@@ -11,9 +11,10 @@ const UserSchema = new mongoose.Schema({
   role: { type: String, default: 'user' },
   preferences: [String],
   shoppingHistory: [{
-    product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+    order: { type: mongoose.Schema.Types.ObjectId, ref: 'Order' }, 
     purchaseDate: Date
   }]
+
 });
 
 UserSchema.pre('save', async function(next) {

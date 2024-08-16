@@ -3,6 +3,7 @@ const statusRoutes = require('../src/health/routes');
 const userRoutes = require('../src/users/userRoutes');
 const storeRoutes = require('../src/inventory/routes/storeRoutes');
 const productRoutes = require('../src/inventory/routes/productRoutes');
+const orderRoutes = require('../src/inventory/routes/OrderRoutes');
 
 module.exports = (app) => {
   app.get('/', (req, res) => {
@@ -12,6 +13,8 @@ module.exports = (app) => {
   app.use('/auth', userRoutes);
   app.use('/store', storeRoutes);
   app.use('/product', productRoutes);
+  app.use('/orders', orderRoutes);
+
 
   // Handle 404 - Not Found
   app.use('*', (req, res, next) => {

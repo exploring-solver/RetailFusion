@@ -2,8 +2,9 @@
 
 ## Omnichannel Future of Retail
 
-### Hackathon: Walmart Sparkathon
-### Category: Future of Retail
+Hackathon: Walmart Sparkathon
+
+Category: Future of Retail
 
 ## Identified Problem:
 
@@ -15,27 +16,29 @@ Facing challenges due to vague adaptive retail and lack of omnichannel integrati
 
 Experience a full range of online shopping features through the application. Key features include:
 
-- **Virtual Shopping**: Dive into a virtual reality environment to browse and interact with products as if you were physically in a store.
-- **AR Marketplace**: Use augmented reality to visualize products in your own space, helping you make more informed purchasing decisions.
+- Virtual Shopping
+- AR Marketplace
 
 ### 2. **In-Store Assistance**
 
 Enhance your in-store shopping experience with features designed to assist you while you're at the store:
 
-- **Scan to Cart**: Quickly scan items in the store to add them directly to your cart, streamlining the checkout process.
-- **Navigate Store**: Use interactive navigation to find your way around the store efficiently, locating specific products or sections with ease.
+- Scan to Cart
+- Navigate Store
 
 ### 3. **Takeaways from Nearby Store**
 
 Conveniently manage takeaways from nearby stores with these features:
 
-- **Order for Pickup**: Place an order for items from a nearby store and select a convenient pickup time.
-- **Check Availability**: View real-time stock information for items available at nearby stores to ensure they are in stock before visiting.
+- Order for Pickup
+- Check Availability
 
 ## Hosted Link
 
 Frontend Live at: [https://retailfusion.netlify.app/](https://retailfusion.netlify.app/)
+
 Backend Live at: [https://retailfusion.onrender.com/](https://retailfusion.onrender.com/)
+
 Admin Panel at: [https://retailfusion.onrender.com/admin](https://retailfusion.onrender.com/admin)
 
 ## Run Locally:
